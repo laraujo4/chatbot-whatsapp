@@ -116,8 +116,10 @@ client.on('message', async msg => {
 
 const foraDoHorario = () => {
     const agora = new Date();
-    const hora = agora.getHours();
-    return (hora < 7 || hora >= 20);
+    const horaUTC = agora.getUTCHours(); // hora em UTC
+    const horaBrasilia = (horaUTC - 3 + 24) % 24; // GMT-3 (corrigido)
+
+    return (horaBrasilia < 7 || horaBrasilia >= 20);
 };
 
 app.listen(port, () => {
