@@ -84,7 +84,7 @@ client.on('message', async msg => {
             );
 
             const media = MessageMedia.fromFilePath('./Cardápio Quiosque.jpg');
-            await client.sendMessage(from, media, { caption: '📋 Cardápio da Pamonha e Cia' });
+            await client.sendMessage(from, media, { caption: '📋 Cardápio' });
             return;
         }
 
@@ -110,15 +110,7 @@ client.on('message', async msg => {
                 '👤 Beleza!\nUm *atendente* vai te chamar em instantes.\n\nEnquanto isso, envie dúvidas ou pedidos 😊'
             );
             return;
-        }
-
-        // --- RESPOSTA PADRÃO PARA OPÇÕES INVÁLIDAS ---
-        await client.sendMessage(from,
-            '❗ Não entendi sua resposta.\n\nPor favor, escolha uma das opções abaixo:\n\n' +
-            '1️⃣ Fazer um pedido\n' +
-            '2️⃣ Encomendar saco de milho\n' +
-            '3️⃣ Falar com atendente'
-        );
+        };
 
     } catch (err) {
         console.error('❌ Erro no processamento da mensagem:', err);
