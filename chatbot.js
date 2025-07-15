@@ -49,7 +49,7 @@ client.on('message', async msg => {
             return;
         }
 
-        if (/^(menu|teste|dia|tarde|bom|boa|noite|oi|olá|ola)$/i.test(msg.body)) {
+        if (/^(menu|teste|dia|tarde|bom|boa|boa noite|boa tarde|bom dia|noite|oi|olá|ola|oi bom dia|oi, bom dia|olá bom dia|olá, bom dia|oi boa tarde|oi, boa tarde|olá boa tarde|olá, boa tarde|oi boa noite|oi, boa noite|olá boa noite|olá, boa noite)$/i.test(msg.body)) {
             const contact = await msg.getContact();
             const name = contact.pushname || 'amigo';
             const firstName = name.split(' ')[0];
@@ -59,7 +59,7 @@ client.on('message', async msg => {
             await delay(1000);
 
             await client.sendMessage(from,
-                '👋 Olá, ' + firstName + '! Seja bem-vindo à *Pamonha e Cia* 🌽\n' +
+                'Olá, ' + firstName + '! Seja bem-vindo à *Pamonha e Cia* 🌽\n' +
                 'Sou seu assistente virtual!\n\n' +
                 'Por favor, escolha uma opção:\n\n' +
                 '1️⃣ Fazer um pedido\n' +
